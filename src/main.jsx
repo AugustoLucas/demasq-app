@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   }
 ])
 
-import Resultado from "./routes/Resultado.jsx";
+import Resultado from "./Resultado.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

@@ -2,6 +2,7 @@
 
 div#root {
   width: 100%;
+  text-align: center;
 }
 
 div.App {
@@ -18,8 +19,18 @@ header.App-header {
   display: flex;
 }
 
+a {
+  color: inherit;
+}
+
 a.backIcon {
   display: flex;
+}
+
+a.limparHistorico {
+  display: flex;
+  flex-direction: row-reverse;
+  cursor: grab;
 }
 
 span.logo {
@@ -27,9 +38,8 @@ span.logo {
   height: 10vh;
 }
 
-img.icon {
+.icon {
   width: 24px;
-  margin: 10px;
 }
 
 h1 {
@@ -41,16 +51,13 @@ img.mainLogo {
   padding: 20px 10px;
 }
 
-h3 {
-  text-align: center;
-}
-
 .divider {
   border-top: 1px solid #F1E4EB;
   width: 80vw ;
 }
 
 button {
+  display: flex;
   background-color: #4D626A;
   color: #ffffff;
   font-weight: bold;
@@ -69,6 +76,7 @@ button {
 }
 
 button.btnColar {
+  display: inline;
   position: absolute;
   right: 15px;
 }
@@ -110,10 +118,19 @@ button#btnAnalisar {
 
 li.msgPreview {
   display: flex;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding: 20px 0;
+  padding: 10px;
   border-bottom: 1px solid #F1E4EB;
+  color: #4D626A;
+}
+
+li.msgPreview:hover {
+  background-color: #F1E4EB;
+}
+
+.msgPreview p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 ul {
@@ -124,8 +141,26 @@ p {
   text-align: justify;
 }
 
-.msgPreview p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.resAnaliseContainer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+img.resultadoIcon {
+  width: 64px;
+  margin: auto;
+  display: block;
+}
+
+ul.tipsList {
+  text-align: justify;
+}
+
+li.tip {
+  list-style: none;
+  display: flex;
+}
+
+li.tip p {
+  margin: 10px;
 }

@@ -13,7 +13,10 @@ function MsgHistory() {
             msgHistoryData.reverse().map(message => 
                 <Link to={`/resultado?text=${message.text}&sender=${message.sender}`}>
                 <li className="msgPreview">
-                    <p>{message.text}</p>
+                    <p>
+                        {message.text}
+                    </p>
+                    <img className="icon" src="../assets/avancar-icon.svg" />
                 </li>
                 </Link>
             )}

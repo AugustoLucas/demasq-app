@@ -83,7 +83,7 @@ class Analisys {
     }
 
     static execute(message) {
-        let resultado = ''
+        let result = ''
         const tips = [
             ...Analisys.subject(message).tips,
             ...Analisys.domains(message).tips,
@@ -98,13 +98,13 @@ class Analisys {
 
         switch (suspect) {
             case 0:
-                resultado = 'LEGÍTIMA'
+                result = 'LEGÍTIMA'
                 break
             case 1:
-                resultado = 'NEUTRA'
+                result = 'NEUTRA'
                 break;
             default:
-                resultado = 'SUSPEITA'
+                result = 'SUSPEITA'
         }
 
         if (tips.length == 0) {
@@ -112,7 +112,7 @@ class Analisys {
         }
 
         return {
-            resultado:resultado,
+            result:result,
             tips:tips
         }
     }

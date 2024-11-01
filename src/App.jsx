@@ -70,7 +70,10 @@ function App() {
       <hr className='divider' />
 
       <h3>Últimas mensagens analisadas</h3>
-      <button onClick={limparHistorico}>Limpar histórico</button>
+      <a className='limparHistorico' onClick={limparHistorico}>
+        <img className="icon" src="../assets/trash-icon.svg" />
+        Limpar histórico
+      </a>
       <MsgHistory />
     </div>
 
