@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react';
-import { Form, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import MsgHistory from './components/MsgHistory.jsx'
 
 function App() {
@@ -8,17 +8,31 @@ function App() {
   let messages = (temp == null) ? new Array() : temp
 
   const [value, setValue] = React.useState('');
+  const navigate = useNavigate()
 
-  const storeMessage = event => {
-    let text = document.getElementById('inputMsg').value
-    let sender = document.getElementById('inputSender').value
-
+  const storeMessage = (text, sender) => {
     messages.push({
       text: text,
       sender: sender
     })
     localStorage.setItem('msgHistoryData', JSON.stringify(messages));
   };
+
+  const analisar = event => {
+    let text = document.getElementById('inputMsg').value
+    let sender = document.getElementById('inputSender').value.replace(/\D/g, '')
+    
+    if (text && sender) {
+      if (sender.length >= 3 && sender.length <= 13) {
+        storeMessage(text, sender)
+        navigate(`/resultado?text=${text}&sender=${sender}`)
+      } else {
+        alert('Número inválido')
+      }
+    } else {
+      alert('Preencha o texto da mensagem e o número que enviou a mensagem')
+    }
+  }
 
   const limparHistorico = event => {
     localStorage.clear()
@@ -34,38 +48,38 @@ function App() {
           </span>
       </header>
 
-      <Form method='get' action='/resultado'>
-        <div className='inputContainer'>
-          <textarea id='inputMsg' className='input' name='text' rows={10} cols={30} />
-          <button
-            id='btnColarMensagem'
-            className='btnColar'
-            type='button'
-            onClick={(e) => navigator.clipboard.readText()
-              .then(text => {
-                document.getElementById('inputMsg').innerText = text;
-            })
-            .catch(err => {
-              console.error('Failed to read clipboard contents: ', err);
-            })}>Colar mensagem </button>     
-        </div><br />
+      <div className='inputContainer'>
+        <textarea id='inputMsg' className='input' name='text' rows={10} cols={30} />
+        <button
+          id='btnColarMensagem'
+          className='btnColar'
+          type='button'
+          onClick={(e) => navigator.clipboard.readText()
+            .then(text => {
+              document.getElementById('inputMsg').innerText = text;
+          })
+          .catch(err => {
+            console.error('Failed to read clipboard contents: ', err);
+          })}>Colar mensagem </button>     
+      </div><br />
 
-        <div className='inputContainer'>
-          <input type='text' id='inputSender' className='input' name='sender' />
-          <button
-            className='btnColar'
-            type='button'
-            onClick={(e) => navigator.clipboard.readText()
-              .then(text => {
-                document.getElementById('inputSender').value = text;
-            })  
-            .catch(err => {
-              console.error('Failed to read clipboard contents: ', err);
-            })}>Colar</button>
-        </div><br />
+      <div className='inputContainer'>
+        <input type='text' id='inputSender' className='input' name='sender' />
+        <button
+          className='btnColar'
+          type='button'
+          onClick={(e) => navigator.clipboard.readText()
+            .then(text => {
+              document.getElementById('inputSender').value = text;
+          })  
+          .catch(err => {
+            console.error('Failed to read clipboard contents: ', err);
+          })}>Colar número</button>
+      </div><br />
 
-        <button id='btnAnalisar' type='submit' onClick={storeMessage}>ANALISAR</button>
-      </Form>
+      <button id='btnAnalisar' type='submit' onClick={analisar}>ANALISAR</button>
+
+      
 
       <hr className='divider' />
 

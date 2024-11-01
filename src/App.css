@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
 
+:root {
+  --white: #F7F9FB;
+  --light-blue: #8FC1E3;
+  --blue: #31708E;
+  --dark-grey: #3f483c;
+}
+
 div#root {
   width: 100%;
   text-align: center;
+  color: var(--dark-grey);
 }
 
 div.App {
@@ -13,10 +21,6 @@ div.page {
   position: absolute;
   top: 0;
   padding: 5vh 10vw;
-}
-
-header.App-header {
-  display: flex;
 }
 
 a {
@@ -44,26 +48,32 @@ span.logo {
 
 h1 {
   font-family: 'Baumans';
+  margin-top: 0;
 }
 
 img.mainLogo {
   height: 4em;
-  padding: 20px 10px;
 }
 
 .divider {
-  border-top: 1px solid #F1E4EB;
+  border-top: 1px solid var(--white);
   width: 80vw ;
 }
 
 button {
   display: flex;
-  background-color: #4D626A;
-  color: #ffffff;
+  background-color: var(--blue);
+  color: var(--white);
   font-weight: bold;
   border: none;
   padding: 10px 15px;
   border-radius: 5rem;
+}
+
+button:hover {
+  background-color: #ffffff00;
+  color: var(--blue);
+  border: var(--blue) solid;
 }
 
 .inputContainer {
@@ -82,7 +92,7 @@ button.btnColar {
 }
 
 .input {
-  background-color: #faf5f8;
+  background-color: var(--white);
   border: none;
   border-radius: 10px;
   padding: 10px 0;
@@ -100,9 +110,13 @@ input#inputSender {
 }
 
 span#msgTextContainer {
-  color: #6B8894;
+  color: var(--dark-grey);
   display: inline-block;
   width: 80vw;
+}
+
+span#msgTextContainer p {
+  padding: 20px;
 }
 
 button#btnAnalisar {
@@ -119,12 +133,12 @@ button#btnAnalisar {
 li.msgPreview {
   display: flex;
   padding: 10px;
-  border-bottom: 1px solid #F1E4EB;
-  color: #4D626A;
+  border-bottom: 1px solid var(--white);
+  color: #0B0C10;
 }
 
 li.msgPreview:hover {
-  background-color: #F1E4EB;
+  background-color: var(--white);
 }
 
 .msgPreview p {

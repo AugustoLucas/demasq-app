@@ -1,4 +1,3 @@
-import { Message } from "./Message"
 
 class Analisys {
     static subject(message) {
