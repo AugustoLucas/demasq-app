@@ -8,6 +8,8 @@ class Analisys {
         if (keywords) {
             suspect++
             tips.push(`A mensagem exige atenção, pois trata de ${keywords.toString()}`)
+        } else {
+            tips.push('A mensagem parece não tratar de assuntos financeiros')
         }
 
         return {
@@ -69,7 +71,7 @@ class Analisys {
         let tips = new Array()
 
         if (message.matchSender()) {
-            tips.push(`O número ${message.sender} é um canal de comunicação oficial de ${message.matchSender()}`)
+            tips.push(`O número ${message.sender}, que enviou a mensagem, é um canal de comunicação oficial de ${message.matchSender()}`)
         } else {
             suspect++
             tips.push(`O número ${message.sender}, que enviou a mensagem, parece não pertencer a uma instituição financeira`)

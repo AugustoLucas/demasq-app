@@ -9,7 +9,7 @@ function Resultado() {
     
     return (
         <div className="Resultado page">
-            <header className="App-header">
+            <header className="page-header">
                 <Link className="backIcon" to={'/'}>
                     <img className="icon" src="../assets/back-icon.svg" />
                 </Link>
@@ -20,7 +20,7 @@ function Resultado() {
                     {message.text}
                 </p>
                 <p style={{textAlign:'right', fontSize:'0.8rem'}}>
-                    REMETENTE {message.sender}
+                    ENVIADA POR {message.sender}
                 </p>
             </span>
 

@@ -48,6 +48,8 @@ function App() {
           </span>
       </header>
 
+
+      <p>Descubra se a mensagem que você recebeu é legítima ou suspeita. Basta informar o texto da mensagem e o número que a enviou:</p>
       <div className='inputContainer'>
         <textarea id='inputMsg' className='input' name='text' rows={10} cols={30} />
         <button

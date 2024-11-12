@@ -15,6 +15,10 @@ function MsgHistory() {
                 <li className="msgPreview">
                     <p>
                         {message.text}
+                        <br />
+                        <span style={{fontSize:'0.8rem'}}>
+                            ENVIADA POR {message.sender}
+                        </span>
                     </p>
                     <img className="icon" src="../assets/avancar-icon.svg" />
                 </li>
