@@ -18,7 +18,7 @@ export class Message {
     }
 
     findDomains() {
-        const regex = RegExp("[www\.]?[A-Za-z0-9-]{1,63}\\.+[A-Za-z\.]{2,8}[a-zA-Z]{0,2}", "g")
+        const regex = RegExp("[www\.]?[A-Za-z0-9-]{1,63}\\.+[A-Za-z\.]{2,8}[a-zA-Z]{0,2}", "gi")
         const matchList = this.text.match(regex)
 
         return (matchList != null) ? matchList : false
