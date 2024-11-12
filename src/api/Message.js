@@ -51,8 +51,15 @@ export class Message {
     findPhones() {
         const regex = /(1\d\d(\d\d)?)|(0800 ?\d{3} ?\d{4})|((\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\d[ .-]?)?(9|9[ .-])?[2-9]\d{3}[ .-]?\d{4})/g
         const matchList = this.text.match(regex)
-
-        return (matchList != null) ? matchList : false
+        var cleanedList = []
+        
+        if (matchList != null) {
+            matchList.forEach( phone => {
+                cleanedList.push(phone.replace(/ .-()/, ''))
+            })
+        } else {
+            return false
+        }
     }
 
     matchPhones() {
@@ -60,7 +67,7 @@ export class Message {
         const matchList = []
 
         try {
-            foundPhones.forEach((phone) => {
+            cleanedPhones.forEach((phone) => {
                 if (DB.LEGITPHONENUMBERS[phone] != undefined)
                     matchList.push([phone, DB.LEGITPHONENUMBERS[phone]])
             })

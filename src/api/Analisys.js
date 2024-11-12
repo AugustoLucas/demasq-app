@@ -6,8 +6,8 @@ class Analisys {
 
         const keywords = message.matchKeywords()
         if (keywords) {
-            suspect++
-            tips.push(`A mensagem exige atenção, pois trata de ${keywords.toString()}`)
+            //suspect++
+            tips.push(`A mensagem exige atenção, por conta dos termos: ${keywords.toString()}`)
         } else {
             tips.push('A mensagem parece não tratar de assuntos financeiros')
         }
@@ -32,7 +32,9 @@ class Analisys {
                 });
             } else {
                 suspect++
-                tips.push(`O(s) endereço(s) ${foundDomains.toString()} parece(m) não ser legítimo(s)`)
+                foundDomains.forEach(domain => {
+                    tips.push(`O endereço ${domain} parece não ser legítimo`)
+                })
             }
         }
         
@@ -56,7 +58,9 @@ class Analisys {
                 });
             } else {
                 suspect++
-                tips.push(`O(s) telefone(s) ${foundPhones.toString()}, citado(s) na mensagem, parece(m) não pertencer a uma instituição financeira`)
+                foundPhones.forEach(phone => {
+                    tips.push(`O telefone ${phone}, citado na mensagem, parece não pertencer a uma instituição financeira`)
+                })
             }
         }
 

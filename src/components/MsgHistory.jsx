@@ -20,7 +20,7 @@ function MsgHistory() {
                             ENVIADA POR {message.sender}
                         </span>
                     </p>
-                    <img className="icon" src="../assets/avancar-icon.svg" />
+                    <img className="icon" src="/assets/avancar-icon.svg" />
                 </li>
                 </Link>
             )}

@@ -25,14 +25,15 @@ function Resultado() {
             </span>
 
             <div className="resAnaliseContainer">
-                <img className="resultadoIcon" src={`../public/assets/${analise.result}.svg`} />
+                <img className="resultadoIcon" src={`/assets/${analise.result}.svg`} />
                 <h3>{analise.result}</h3>
             </div>
 
             <ul className="tipsList">
+                <p>A análise considera a mensagem como "{analise.result}", com base nos seguintes aspectos:</p>
                 {analise.tips.map(tip => 
                     <li className="tip">
-                        <img src="../public/assets/alert.svg" />
+                        <img src="/assets/alert.svg" />
                         <p>{tip}</p>
                     </li>
                 )}
