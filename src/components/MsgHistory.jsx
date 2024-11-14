@@ -1,6 +1,3 @@
-//import { messages } from "../database";
-
-import { type } from "os"
 import { Link } from "react-router-dom";
 
 function MsgHistory() {

@@ -77,6 +77,12 @@ button {
   border-radius: 5rem;
 }
 
+button.btnMaisInfo {
+  display: inline-block;
+  width: 50vw;
+  text-align: center;
+}
+
 button:hover {
   background-color: #ffffff00;
   color: var(--blue);

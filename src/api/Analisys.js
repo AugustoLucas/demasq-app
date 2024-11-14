@@ -1,4 +1,3 @@
-
 class Analisys {
     static subject(message) {
         let suspect = 0
@@ -6,7 +5,6 @@ class Analisys {
 
         const keywords = message.matchKeywords()
         if (keywords) {
-            //suspect++
             tips.push(`A mensagem exige atenção, por conta dos termos: ${keywords.toString()}`)
         } else {
             tips.push('A mensagem parece não tratar de assuntos financeiros')

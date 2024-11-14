@@ -1,4 +1,11 @@
 export const phones = {
+    "23197": "Banco do Brasil S.A.",
+    "29193": "Caixa Econômica Federal",
+    "29194": "Caixa Econômica Federal",
+    "29196": "Caixa Econômica Federal",
+    "29015": "Caixa Econômica Federal",
+    "29111": "Caixa Econômica Federal",
+    "29197": "Caixa Econômica Federal",
     "30031467": "Alelo",
     "30031616": "BV Financeira",
     "30032593": "WILL BANK",
