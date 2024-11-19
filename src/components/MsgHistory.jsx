@@ -8,7 +8,7 @@ function MsgHistory() {
         <ul>
             {
             msgHistoryData.reverse().map(message => 
-                <Link to={`/resultado?text=${message.text}&sender=${message.sender}`}>
+                <Link to={`/resultado?text=${message.text}&sender=${message.sender}`} title='Acessar mensagem'>
                 <li className="msgPreview">
                     <p>
                         {message.text}

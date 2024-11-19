@@ -43,7 +43,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <span className='logo'>
-          <img className='mainLogo' src='icon2.png' />
+          <img className='mainLogo' src='icon2.png' alt='Demasq | detector de phishing' title='Demasq | detector de phishing' />
           <h1>Demasq</h1>
           </span>
       </header>
@@ -51,7 +51,7 @@ function App() {
 
       <p>Descubra se a mensagem que você recebeu do banco é legítima ou suspeita. Basta informar o texto da mensagem e o número que a enviou:</p>
       <div className='inputContainer'>
-        <textarea id='inputMsg' className='input' name='text' rows={10} cols={30} />
+        <textarea id='inputMsg' className='input' name='text' rows={10} cols={30}  title='Insira o texto da mensagem'/>
         <button
           id='btnColarMensagem'
           className='btnColar'
@@ -66,7 +66,7 @@ function App() {
       </div><br />
 
       <div className='inputContainer'>
-        <input type='text' id='inputSender' className='input' name='sender' />
+        <input type='text' id='inputSender' className='input' name='sender'  title='Insira o número que enviou a mensagem'/>
         <button
           className='btnColar'
           type='button'
@@ -79,14 +79,14 @@ function App() {
           })}>Colar número</button>
       </div><br />
 
-      <button id='btnAnalisar' type='submit' onClick={analisar}>ANALISAR</button>
+      <button id='btnAnalisar' type='submit' onClick={analisar} title='Analisar mensagem'>ANALISAR</button>
 
       
 
       <hr className='divider' />
 
       <h3>Últimas mensagens analisadas</h3>
-      <a className='limparHistorico' onClick={limparHistorico}>
+      <a className='limparHistorico' onClick={limparHistorico} title='Apagar histórico de mensagens'>
         <img className="icon" src="../assets/trash-icon.svg" />
         Limpar histórico
       </a>
