@@ -1,4 +1,6 @@
 export const phones = {
+    "2370": "Banco Bradesco S.A.",
+    "30330": "Banco Bradesco S.A.",
     "23197": "Banco do Brasil S.A.",
     "29193": "Caixa Econômica Federal",
     "29194": "Caixa Econômica Federal",
@@ -6,6 +8,7 @@ export const phones = {
     "29015": "Caixa Econômica Federal",
     "29111": "Caixa Econômica Federal",
     "29197": "Caixa Econômica Federal",
+    "24828": "ITAU UNIBANCO S.A.",
     "30031467": "Alelo",
     "30031616": "BV Financeira",
     "30032593": "WILL BANK",

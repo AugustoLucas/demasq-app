@@ -40,7 +40,7 @@ function Resultado() {
             </ul>
 
             <Link to='https://antifraudes.febraban.org.br/' target='blank'>
-                <button className="btnMaisInfo">Mais informações &nbsp;🡕</button>
+                <button className="btnMaisInfo">Mais informações &nbsp;🔗</button>
             </Link>
             
         </div>

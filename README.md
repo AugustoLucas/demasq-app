@@ -1,8 +1,4 @@
-# React + Vite
+# Demasq | detector de phishing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O Demasq (do francês démasquer, “desmascarar”) é uma aplicação web que age na detecção de tentativas de smishing através da verificação de links e números de telefone presentes nas mensagens informadas pelo usuário e exibição dos critérios utilizados na análise. A essa funcionalidade, acrescenta-se também a prestação de informações úteis no reconhecimento de fraudes e golpes.
+Este projeto foi entregue ao Curso EaD de Bacharelado em Engenharia de Software como pré-requisito obrigatório à obtenção do título de Bacharel em Engenharia de Software.

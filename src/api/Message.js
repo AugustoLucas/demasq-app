@@ -10,7 +10,7 @@ export class Message {
         const matchList = []
     
         DB.KEYWORDS.forEach((key) => {
-            if (RegExp(key).test(this.text))
+            if (RegExp(key, "i").test(this.text))
                     matchList.push(key)
           })
     
@@ -18,11 +18,31 @@ export class Message {
     }
 
     findDomains() {
-        const regex = RegExp("[www\.]?[A-Za-z0-9-]{1,63}\\.+[A-Za-z\.]{2,8}[a-zA-Z]{0,2}", "gi")
+        const regex = RegExp("(?:WWW\\.)?([A-Za-z0-9-]{1,63}\\.)+[A-Za-z]{1,3}(\\.[a-zA-Z]{0,2})?", "gi")
         const matchList = this.text.match(regex)
 
-        return (matchList != null) ? matchList : false
-    }
+        if (matchList != null) {
+            for (let i = 0; i < matchList.length; i++) {
+                let domain = matchList[i]
+                
+                domain = domain.toLowerCase().replace('www.', '')
+                domain = domain.split('')
+
+                let count = domain.filter( l => l === '.').length
+
+                while (count > 2) {
+                    if (domain.shift() === '.')
+                        count--
+                }
+
+                matchList[i] = domain.join('')
+            }
+            
+            return matchList
+        }
+
+        return false
+    }   
 
     matchDomains() {
         const foundDomains = this.findDomains()
